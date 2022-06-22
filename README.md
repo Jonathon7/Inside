@@ -133,9 +133,6 @@ The UI components file `src/components/ui.js` imports styles from `src/component
 
 ![Logo](./docs/images/logo.png)
 
-Replace the `src/components/brand-logo.js` component with your own brand logo.
-If you have an SVG version, it can be rendered inline as a React component, following the example in this file. Note that SVG attributes will need to be camel cased for JSX.
-
 Using an inline SVG for the logo allows it to pick up the colors used in CSS, which is how the logo colors are inverted for the mobile menu.
 
 If you prefer to use an image, use the [`StaticImage`](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#staticimage) component from `gatsby-plugin-image` in place of the SVG in this file.
@@ -243,12 +240,7 @@ For this example, we'll create a new "Banner" component.
    // src/components/sections.js
    export { default as HomepageHero } from "./hero"
    export { default as HomepageFeature } from "./feature"
-   export { default as HomepageFeatureList } from "./feature-list"
    export { default as HomepageLogoList } from "./logo-list"
-   export { default as HomepageBenefitList } from "./benefit-list"
-   export { default as HomepageTestimonialList } from "./testimonial-list"
-   export { default as HomepageStatList } from "./stat-list"
-   export { default as HomepageCta } from "./cta"
    export { default as HomepageProductList } from "./product-list"
 
    // add export for new component
@@ -273,13 +265,7 @@ For this example, we'll create a new "Banner" component.
            id
            blocktype
            ...HomepageHeroContent
-           ...HomepageFeatureContent
-           ...HomepageFeatureListContent
-           ...HomepageCtaContent
            ...HomepageLogoListContent
-           ...HomepageTestimonialListContent
-           ...HomepageBenefitListContent
-           ...HomepageStatListContent
            ...HomepageProductListContent
            # New component fragment
            ...HomepageBannerContent

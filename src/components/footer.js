@@ -1,13 +1,6 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import {
-  Twitter,
-  Twitch,
-  Instagram,
-  Facebook,
-  Youtube,
-  GitHub,
-} from "react-feather"
+import { Twitter, Instagram, Facebook, Youtube } from "react-feather"
 import {
   Container,
   Flex,
@@ -15,11 +8,9 @@ import {
   Box,
   Space,
   NavLink,
-  Text,
   IconLink,
   VisuallyHidden,
 } from "./ui"
-import BrandLogo from "./brand-logo"
 
 const socialMedia = {
   TWITTER: {
@@ -41,16 +32,6 @@ const socialMedia = {
     url: "https://youtube.com",
     name: "YouTube",
     icon: <Youtube />,
-  },
-  GITHUB: {
-    url: "https://github.com",
-    name: "GitHub",
-    icon: <GitHub />,
-  },
-  TWITCH: {
-    url: "https://twitch.tv",
-    name: "Twitch",
-    icon: <Twitch />,
   },
 }
 
@@ -79,11 +60,6 @@ export default function Footer() {
             href
             text
           }
-          meta {
-            id
-            href
-            text
-          }
           copyright
           socialLinks {
             id
@@ -95,7 +71,7 @@ export default function Footer() {
     }
   `)
 
-  const { links, meta, socialLinks, copyright } = data.layout.footer
+  const { links, socialLinks } = data.layout.footer
 
   return (
     <Box as="footer" paddingY={4}>
@@ -103,7 +79,6 @@ export default function Footer() {
         <Flex variant="start" responsive>
           <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
-            <BrandLogo />
           </NavLink>
           <Space />
           <FlexList>
@@ -133,18 +108,6 @@ export default function Footer() {
                 </li>
               ))}
           </FlexList>
-          <Space />
-          <FlexList>
-            {meta &&
-              meta.map((link) => (
-                <li key={link.id}>
-                  <NavLink to={link.href}>
-                    <Text variant="small">{link.text}</Text>
-                  </NavLink>
-                </li>
-              ))}
-          </FlexList>
-          <Text variant="small">{copyright}</Text>
         </Flex>
       </Container>
       <Space size={3} />

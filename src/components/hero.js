@@ -17,8 +17,8 @@ export default function Hero(props) {
   return (
     <Section>
       <Container>
-        <Flex gap={4} variant="responsive">
-          <Box width="half">
+        <Flex gap={4} variant="center">
+          <Box width="twothirds">
             {props.image && (
               <GatsbyImage
                 alt={props.image.alt}
@@ -26,7 +26,15 @@ export default function Hero(props) {
               />
             )}
           </Box>
-          <Box width="half">
+          <Box
+            width="twothirds"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <Heading as="h1">
               {props.kicker && <Kicker>{props.kicker}</Kicker>}
               {props.h1}

@@ -221,7 +221,7 @@ export function Logo({ alt, image, size = "small" }) {
   )
 }
 
-export function Icon({ alt, image, size = "medium" }) {
+export function Icon({ alt, image, size = "large" }) {
   return (
     <GatsbyImage
       alt={alt}

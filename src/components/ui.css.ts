@@ -255,8 +255,6 @@ export type TextVariants =
   | "subheadSmall"
   | "kicker"
   | "caps"
-  | "stat"
-  | "statLabel"
   | "small"
   | "medium"
   | "mega"
@@ -358,23 +356,6 @@ export const text: Record<TextVariants, string> = styleVariants({
       letterSpacing: theme.letterSpacings.wide,
       textTransform: "uppercase",
       fontStyle: "normal",
-    },
-  ],
-  stat: [
-    margin0,
-    {
-      fontFamily: theme.fonts.mono,
-      fontSize: theme.fontSizes[6],
-      fontWeight: theme.fontWeights.medium,
-      lineHeight: theme.lineHeights.tight,
-    },
-  ],
-  statLabel: [
-    margin0,
-    {
-      fontWeight: theme.fontWeights.bold,
-      fontSize: theme.fontSizes[4],
-      lineHeight: theme.lineHeights.heading,
     },
   ],
   small: [
@@ -585,8 +566,8 @@ export const icons: Record<IconSizes, string> = styleVariants(
     large: "64px",
   },
   (size) => ({
-    width: size,
-    height: size,
+    width: "auto",
+    height: "auto",
     marginBottom: theme.space[3],
   })
 )

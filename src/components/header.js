@@ -7,7 +7,6 @@ import {
   FlexList,
   Space,
   NavLink,
-  Button,
   InteractiveIcon,
   Nudge,
   VisuallyHidden,
@@ -20,7 +19,6 @@ import {
   mobileNavSVGColorWrapper,
 } from "./header.css"
 import NavItemGroup from "./nav-item-group"
-import BrandLogo from "./brand-logo"
 
 export default function Header() {
   const data = useStaticQuery(graphql`
@@ -49,17 +47,12 @@ export default function Header() {
               }
             }
           }
-          cta {
-            id
-            href
-            text
-          }
         }
       }
     }
   `)
 
-  const { navItems, cta } = data.layout.header
+  const { navItems } = data.layout.header
   const [isOpen, setOpen] = React.useState(false)
 
   React.useEffect(() => {
@@ -77,7 +70,6 @@ export default function Header() {
         <Flex variant="spaceBetween">
           <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
-            <BrandLogo />
           </NavLink>
           <nav>
             <FlexList gap={4}>
@@ -96,7 +88,6 @@ export default function Header() {
                 ))}
             </FlexList>
           </nav>
-          <div>{cta && <Button to={cta.href}>{cta.text}</Button>}</div>
         </Flex>
       </Container>
       <Container className={mobileHeaderNavWrapper[isOpen ? "open" : "closed"]}>
@@ -109,18 +100,10 @@ export default function Header() {
           >
             <NavLink to="/">
               <VisuallyHidden>Home</VisuallyHidden>
-              <BrandLogo />
             </NavLink>
           </span>
           <Flex>
             <Space />
-            <div>
-              {cta && (
-                <Button to={cta.href} variant={isOpen ? "reversed" : "primary"}>
-                  {cta.text}
-                </Button>
-              )}
-            </div>
             <Nudge right={3}>
               <InteractiveIcon
                 title="Toggle menu"

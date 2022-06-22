@@ -7,9 +7,9 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     siteUrl: "https://gatsbycontentfulhomepage.gatsbyjs.io/",
-    title: "Gatsby Contentful Homepage Starter",
-    author: `Gatsby`,
-    description: "A Gatsby Starter for building homepages with Contentful",
+    title: "City of Odessa Insider",
+    author: `City of Odessa`,
+    description: "CIty of Odessa Insider",
   },
   plugins: [
     {
@@ -29,8 +29,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "Gatsby Starter Contentful Homepage",
-        short_name: "Gatsby",
+        name: "City of Odessa Inside",
+        short_name: "The Insider",
         start_url: "/",
         // These can be imported once ESM support lands
         background_color: "#ffe491",
